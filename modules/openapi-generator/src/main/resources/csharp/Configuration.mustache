@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Net;
 
 namespace {{packageName}}.Client
 {
@@ -447,7 +448,20 @@ namespace {{packageName}}.Client
         {
             ApiKeyPrefix[key] = value;
         }
-
+        
+        /// <summary>
+        /// sets the SSL validate.
+        /// </summary>
+        /// <param name="flag"></param>
+        /// <returns>false if you don't want a SSL validate. default is true</returns>
+        public void SetVerifyingSsl(bool flag)
+        {
+            if (!flag)
+            {
+                ServicePointManager.ServerCertificateValidationCallback +=(sender, certificate, chain, sslPolicyErrors) => true;
+            }
+        }
+        
         #endregion Methods
     }
 }

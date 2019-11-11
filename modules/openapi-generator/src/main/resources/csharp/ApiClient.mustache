@@ -54,6 +54,7 @@ namespace {{packageName}}.Client
         public ApiClient()
         {
             Configuration = {{packageName}}.Client.Configuration.Default;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls11;
             RestClient = new RestClient("{{{basePath}}}");
             {{#netStandard}}
             RestClient.IgnoreResponseStatusCode = true;
@@ -68,7 +69,7 @@ namespace {{packageName}}.Client
         public ApiClient(Configuration config)
         {
             Configuration = config ?? {{packageName}}.Client.Configuration.Default;
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls11;
             RestClient = new RestClient(Configuration.BasePath);
             {{#netStandard}}
             RestClient.IgnoreResponseStatusCode = true;
@@ -82,9 +83,9 @@ namespace {{packageName}}.Client
         /// <param name="basePath">The base path.</param>
         public ApiClient(String basePath = "{{{basePath}}}")
         {
-           if (String.IsNullOrEmpty(basePath))
+            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls11;
             RestClient = new RestClient(basePath);
             {{#netStandard}}
             RestClient.IgnoreResponseStatusCode = true;
