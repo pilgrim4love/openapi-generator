@@ -22,6 +22,7 @@ import com.samskivert.mustache.Mustache.Lambda;
 
 import io.swagger.v3.core.util.Json;
 import io.swagger.v3.oas.models.media.ArraySchema;
+import io.swagger.v3.oas.models.media.ComposedSchema;
 import io.swagger.v3.oas.models.media.Schema;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -742,6 +743,11 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen implements Co
             return this.reservedWordsMappings().get(name);
         }
         return "_" + name;
+    }
+    
+    @Override
+    public String toOneOfName(List<String> names, ComposedSchema composedSchema) {
+        return "Object";
     }
 
     /**
