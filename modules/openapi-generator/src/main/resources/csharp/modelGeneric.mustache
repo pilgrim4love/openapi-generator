@@ -61,16 +61,7 @@
             {{^isInherited}}
             {{^isReadOnly}}
             {{#required}}
-            // to ensure "{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}" is required (not null)
-            if ({{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} == null)
-            {
-                throw new InvalidDataException("{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} is a required property for {{classname}} and cannot be null");
-            }
-            else
-            {
-                this.{{name}} = {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}};
-            }
-            
+            this.{{name}} = {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}};
             {{/required}}
             {{#isNullable}}
             this.{{name}} = {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}};
