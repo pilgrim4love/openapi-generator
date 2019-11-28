@@ -141,10 +141,10 @@ public class CSharpModelTest {
 
         final CodegenProperty property1 = cm.vars.get(0);
         Assert.assertEquals(property1.baseName, "id");
-        Assert.assertEquals(property1.dataType, "long");
+        Assert.assertEquals(property1.dataType, "long?");
         Assert.assertEquals(property1.name, "Id");
         Assert.assertNull(property1.defaultValue);
-        Assert.assertEquals(property1.baseType, "long");
+        Assert.assertEquals(property1.baseType, "long?");
         Assert.assertTrue(property1.hasMore);
         Assert.assertTrue(property1.required);
         Assert.assertTrue(property1.isPrimitiveType);
@@ -161,10 +161,10 @@ public class CSharpModelTest {
 
         final CodegenProperty property3 = cm.vars.get(2);
         Assert.assertEquals(property3.baseName, "createdAt");
-        Assert.assertEquals(property3.dataType, "DateTime");
+        Assert.assertEquals(property3.dataType, "DateTime?");
         Assert.assertEquals(property3.name, "CreatedAt");
         Assert.assertNull(property3.defaultValue);
-        Assert.assertEquals(property3.baseType, "DateTime");
+        Assert.assertEquals(property3.baseType, "DateTime?");
         Assert.assertFalse(property3.hasMore);
         Assert.assertFalse(property3.required);
     }
@@ -190,10 +190,10 @@ public class CSharpModelTest {
 
         final CodegenProperty property1 = cm.vars.get(0);
         Assert.assertEquals(property1.baseName, "id");
-        Assert.assertEquals(property1.dataType, "long");
+        Assert.assertEquals(property1.dataType, "long?");
         Assert.assertEquals(property1.name, "Id");
         Assert.assertNull(property1.defaultValue);
-        Assert.assertEquals(property1.baseType, "long");
+        Assert.assertEquals(property1.baseType, "long?");
         Assert.assertTrue(property1.hasMore);
         Assert.assertTrue(property1.required);
         Assert.assertTrue(property1.isPrimitiveType);
@@ -293,10 +293,10 @@ public class CSharpModelTest {
 
         final CodegenProperty property1 = cm.vars.get(0);
         Assert.assertEquals(property1.baseName, "id");
-        Assert.assertEquals(property1.dataType, "long");
+        Assert.assertEquals(property1.dataType, "long?");
         Assert.assertEquals(property1.name, "Id");
         Assert.assertNull(property1.defaultValue);
-        Assert.assertEquals(property1.baseType, "long");
+        Assert.assertEquals(property1.baseType, "long?");
         Assert.assertTrue(property1.hasMore);
         Assert.assertTrue(property1.required);
         Assert.assertTrue(property1.isPrimitiveType);
